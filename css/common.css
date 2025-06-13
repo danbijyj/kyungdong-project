@@ -1,3 +1,6 @@
+#wrap {
+    min-width: 1600px;
+}
 #wrap,
 #container,
 #content,
@@ -24,6 +27,8 @@
     position: fixed;
     left: 0;
     top: 0;
+    transform: translateX(0%);
+    border-bottom: 1px solid #eee;
 }
 #header .inner {
     height: 90px;
@@ -59,6 +64,16 @@
     font-weight: 500;
 }
 #header .nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 90px;
+    overflow: hidden;
+    transition: 0.4s linear;
+}
+#header .nav.on {
+    height: 450px;
 }
 #header .nav .gnb {
     display: flex;
@@ -74,9 +89,40 @@
     font-size: 18px;
     font-weight: 500;
 }
-#header .nav .gnb > li ul {
-    display: none;
+#header .nav .gnb > li > ul {
+    padding-top: 30px;
+    border-right: 1px solid rgba(136, 136, 136, 0.2);
+    height: 320px;
 }
+#header .nav .gnb > li:last-child > ul {
+    border-right: none;
+}
+#header .nav .gnb > li > ul a {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.8;
+    display: block;
+    text-indent: 30px;
+}
+#header .nav .gnb > li > ul a:hover {
+    color: #f79310;
+}
+#header .nav .gnb > li > ul li ul a {
+    font-size: 16px;
+}
+#header .nav-bg {
+    width: 100%;
+    height: 0;
+    background: #000;
+    opacity: 0.7;
+    position: relative;
+    z-index: -10;
+    transition: 0.4s linear;
+}
+#header .nav-bg.on {
+    height: 350px;
+}
+
 #footer {
     background: #131313;
 }
@@ -89,6 +135,16 @@
     font-size: 13px;
     margin-bottom: 5px;
 }
+
+.top {
+    position: fixed;
+    right: 15%;
+    bottom: 30px;
+    display: none;
+}
+.top.on {
+    display: block;
+}
 .bg {
     display: none;
     position: fixed;
@@ -100,6 +156,9 @@
     z-index: 50;
     opacity: 0.6;
 }
+.bg.on {
+    display: block;
+}
 .sitemap {
     display: none;
     position: fixed;
@@ -110,6 +169,10 @@
     top: 50%;
     z-index: 80;
     transform: translate(-50%, -50%);
+    border-top: 3px solid #07255d;
+}
+.sitemap.on {
+    display: block;
 }
 .sitemap .close {
     position: absolute;
@@ -120,8 +183,6 @@
 .sitemap .close i {
     font-size: 30px;
 }
-.top {
-    position: fixed;
-    right: 15%;
-    bottom: 30px;
+.sitemap .site-gnb {
+    display: flex;
 }
