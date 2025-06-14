@@ -1,0 +1,43 @@
+#mainVisual .mainBanner li.on h2 {
+    animation: ani1 1s ease-in-out 1;
+}
+#mainVisual .mainBanner li.on h2 + p {
+    animation: ani2 1s ease-in-out 1;
+}
+#mainVisual .mainBanner li.on .more {
+    animation: ani3 1.3s ease-in-out 1;
+}
+
+@keyframes ani1 {
+    0%,
+    30% {
+        transform: translate(-50px, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+}
+@keyframes ani2 {
+    0%,
+    30% {
+        transform: translate(50px, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+}
+@keyframes ani3 {
+    0%,
+    50% {
+        transform: translate(0, 30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
